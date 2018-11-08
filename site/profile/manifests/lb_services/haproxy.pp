@@ -1,4 +1,4 @@
-class puppet::proxy {
+class profile::lb_services::haproxy {
 
   include ::haproxy
 
