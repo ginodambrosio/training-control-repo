@@ -1,9 +1,9 @@
 
-class profile::ntp {
+class profile::timeserver {
 
 include ntp
 
-ntp::ntp { 'ntp':
+class { 'ntp':
     servers => [ 'time.asia.apple.com', 'time.optusnet.com.au' ],
   }
 }
