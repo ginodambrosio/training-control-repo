@@ -4,7 +4,7 @@ class profile::lb_services::haproxy {
 
   haproxy::listen { 'puppet':
     collect_exported => false,
-    ipaddress        => $facts['networking']['ip'],
+    ipaddress        => '192.168.2.7',
     ports            => '8140',
   }
 
