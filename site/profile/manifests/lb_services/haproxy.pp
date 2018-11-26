@@ -4,22 +4,22 @@ class profile::lb_services::haproxy {
 
   haproxy::listen { 'puppet':
     collect_exported => false,
-    ipaddress        => '192.168.2.7',
+    ipaddress        => $::ipaddress,
     ports            => '8140',
   }
 
   haproxy::balancermember { 'compile master 1':
     listening_service => 'puppet',
-    server_names      => 'compile-master-0.local',
-    ipaddresses       => '192.168.2.5',
+    server_names      => 'pe-201900-compile-1.puppetdebug.vlan',
+    ipaddresses       => '192.168.0.8',
     ports             => '8140',
     options           => 'check',
   }
 
   haproxy::balancermember { 'compile master 2':
     listening_service => 'puppet',
-    server_names      => 'compile-master-1.local',
-    ipaddresses       => '192.168.2.6',
+    server_names      => 'pe-201900-compile-2.puppetdebug.vlan',
+    ipaddresses       => '192.168.0.10',
     ports             => '8140',
     options           => 'check'
   }
