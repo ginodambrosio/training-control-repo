@@ -1,4 +1,5 @@
-class profile::autosign {
+class profile::ca_auto_sign {
+
 ini_setting { 'policy-based autosigning':
   setting => 'autosign',
   path    => "${confdir}/puppet.conf",
