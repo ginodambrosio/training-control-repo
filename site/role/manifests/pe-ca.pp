@@ -1,3 +1,3 @@
 class role::pe-ca {
-  include profile::autosign
+  include profile::ca_auto_sign
 }
