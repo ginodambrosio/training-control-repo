@@ -10,7 +10,6 @@ class profile::windows::basics3 {
   group{'legends':
         name            => 'legends',
         ensure          => absent,
-        comment         => 'Hall of fame',
         members         => ['Gino DAmbrosio'],
     }
 }
