@@ -15,7 +15,13 @@ class profile::windows::basics3 {
   file { 'c:/Users/gino':
   ensure => 'directory',
 #  mode   => '0660',
-  owner  => 'Gino DAmbrosio',
-  group  => 'Legends',
+#  owner  => 'Gino DAmbrosio',
+#  group  => 'Legends',
     }
+  #acl { 'c:/Users/gino':
+    #permissions => [
+     #{ identity => 'Gino DAmbrosio', rights => ['full'] },
+     #{ identity => 'Legends', rights => ['read'] }
+     #],
+    #}
 }
