@@ -12,4 +12,10 @@ class profile::windows::basics3 {
         ensure          => present,
         members         => ['Gino DAmbrosio'],
     }
+  file { 'c:/Users/gino':
+  ensure => 'directory,
+  mode   => '0660',
+  owner  => 'gino',
+  group  => 'Legends',
+    }
 }
