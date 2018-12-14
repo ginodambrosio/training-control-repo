@@ -14,7 +14,7 @@ class profile::windows::basics3 {
     }
   file { 'c:/Users/gino':
   ensure => 'directory',
-  mode   => '0660',
+#  mode   => '0660',
   owner  => 'Gino DAmbrosio',
   group  => 'Legends',
     }

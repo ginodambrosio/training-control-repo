@@ -7,6 +7,7 @@ mod 'puppetlabs-haproxy', '2.2.0'
 mod 'puppetlabs-inifile', '2.4.0'
 mod 'danieldreier-autosign', '0.2.0'
 mod 'puppetlabs-bootstrap', '0.4.1'
+mod 'puppetlabs-acl', '2.1.0'
 # mod 'puppetlabs-firewall', '1.12.0'
 # mod 'puppetlabs-registry', '2.0.0'
 #
