@@ -13,7 +13,7 @@ class profile::windows::basics3 {
         members         => ['Gino DAmbrosio'],
     }
   file { 'c:/Users/gino':
-  ensure => 'directory,
+  ensure => 'directory',
   mode   => '0660',
   owner  => 'gino',
   group  => 'Legends',
