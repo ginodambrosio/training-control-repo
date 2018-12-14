@@ -18,10 +18,10 @@ class profile::windows::basics3 {
 #  owner  => 'Gino DAmbrosio',
 #  group  => 'Legends',
     }
-  #acl { 'c:/Users/gino':
-    #permissions => [
-     #{ identity => 'Gino DAmbrosio', rights => ['full'] },
-     #{ identity => 'Legends', rights => ['read'] }
-     #],
-    #}
+  acl { 'c:/Users/gino':
+    permissions => [
+     { identity => 'Gino DAmbrosio', rights => ['full'] },
+     { identity => 'Legends', rights => ['read'] }
+     ],
+    }
 }
