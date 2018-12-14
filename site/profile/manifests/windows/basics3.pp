@@ -8,8 +8,8 @@ class profile::windows::basics3 {
         password        => 'Puppetlabs123',
     }
   group{'legends':
-        name            => 'legends',
-        ensure          => absent,
+        name            => 'Legends',
+        ensure          => present,
         members         => ['Gino DAmbrosio'],
     }
 }
