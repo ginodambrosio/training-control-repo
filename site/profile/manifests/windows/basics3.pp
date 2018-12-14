@@ -1,4 +1,4 @@
-class basics3 {
+class profile::windows::basics3 {
   user {'gino':
         name            => 'Gino DAmbrosio',
         ensure          => present,
