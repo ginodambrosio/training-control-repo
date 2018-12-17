@@ -51,4 +51,9 @@ class profile::windows::basics3 {
     installmanagementtools => true,
   }
 
+  reboot {'after_Web-Server':
+    when  => pending,
+    subscribe => Windowsfeature['Web-Server'],
+  }
+
 }
