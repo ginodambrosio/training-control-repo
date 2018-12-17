@@ -67,6 +67,7 @@ class profile::windows::basics3 {
     ensure          => 'started',
     physicalpath    => 'c:\\inetpub\\minimal',
     applicationpool => 'minimal_site_app_pool',
+    defaultpage     => 'index.htm',
     require         => File['minimal'],
   }
 
