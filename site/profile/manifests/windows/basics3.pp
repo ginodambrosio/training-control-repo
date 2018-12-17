@@ -103,4 +103,12 @@ class profile::windows::basics3 {
     path   => 'c:\\inetpub\\minimal',
   }
 
+include '::archive'
+archive { '/home/myuser/help':
+  source        => 'puppet:///modules/profile/help.tar.gz',
+  extract       => true,
+  extract_path  => $homedir,
+  creates       => "${homedir}/help" #directory inside tgz
+}
+
 }
