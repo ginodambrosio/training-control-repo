@@ -47,8 +47,8 @@ class profile::windows::basics3 {
     }
 
   windowsfeature { 'Web-Server':
-    ensure                 => present,
-    installmanagementtools => true,
+    ensure                 => absent,
+#    installmanagementtools => true,
   }
 
   reboot {'after_Web-Server':
@@ -56,24 +56,24 @@ class profile::windows::basics3 {
     subscribe => Windowsfeature['Web-Server'],
   }
 
-  iis_application_pool { 'minimal_site_app_pool':
-    ensure                  => 'present',
-    state                   => 'started',
-    managed_pipeline_mode   => 'Integrated',
-    managed_runtime_version => 'v4.0',
-  } ->
+  #iis_application_pool { 'minimal_site_app_pool':
+    #ensure                  => 'present',
+    #state                   => 'started',
+    #managed_pipeline_mode   => 'Integrated',
+    #managed_runtime_version => 'v4.0',
+  #} ->
 
-  iis_site { 'minimal':
-    ensure          => 'started',
-    physicalpath    => 'c:\\inetpub\\minimal',
-    applicationpool => 'minimal_site_app_pool',
-    defaultpage     => 'index.htm',
-    require         => File['minimal'],
-  }
+  #iis_site { 'minimal':
+    #ensure          => 'started',
+    #physicalpath    => 'c:\\inetpub\\minimal',
+    #applicationpool => 'minimal_site_app_pool',
+    #defaultpage     => 'index.htm',
+    #require         => File['minimal'],
+  #}
 
-  file { 'minimal':
-    ensure => 'directory',
-    path   => 'c:\\inetpub\\minimal',
-  }
+  #file { 'minimal':
+    #ensure => 'directory',
+    #path   => 'c:\\inetpub\\minimal',
+  #}
 
 }
