@@ -9,6 +9,7 @@ mod 'danieldreier-autosign', '0.2.0'
 mod 'puppetlabs-bootstrap', '0.4.1'
 mod 'puppetlabs-acl', '2.1.0'
 mod 'puppetlabs-registry', '2.1.0'
+mod 'puppet-windowsfeature', '3.2.2'
 # mod 'puppetlabs-firewall', '1.12.0'
 #
 # mod 'tse-winntp',              '1.0.1'

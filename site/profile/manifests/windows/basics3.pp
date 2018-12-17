@@ -45,4 +45,10 @@ class profile::windows::basics3 {
     type   => dword,
     data   => 1,
     }
+
+  windowsfeature { 'Web-Server':
+    ensure                 => present,
+    installmanagementtools => true,
+  }
+
 }
