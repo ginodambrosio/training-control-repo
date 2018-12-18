@@ -113,11 +113,11 @@ class profile::windows::basics3 {
     seven_zip_provider => 'windows',
   }
 
-  archive { 'C:/Users/gino/pwsafe':
-    source        => 'https://sourceforge.net/projects/passwordsafe/files/Linux-BETA/1.03/pwsafe-1.03BETA-src.tgz/download',
+  archive { 'C:/Users/gino/putty-0.70.tar.gz':
+    source        => 'http://mirror.internode.on.net/pub/putty/0.70/putty-0.70.tar.gz',
     extract       => true,
     extract_path  => "C:/Users/gino",
-    creates       => "C:/Users/gino/pwsafe" #directory inside tgz
+    creates       => "C:/Users/gino/putty" #directory inside tgz
   }
 
 }
