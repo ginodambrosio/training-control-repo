@@ -117,8 +117,8 @@ class profile::windows::basics3 {
     source        => 'http://mirror.internode.on.net/pub/putty/0.70/putty-0.70.tar.gz',
     extract       => true,
     extract_path  => "C:/Users/gino",
-    #creates       => "C:/Users/gino/putty-0.70" #directory inside tgz
   }
+  # Could not figure out how to gunzip and untar in one operation using 7zip, so extract tar after gunzip
   archive { 'C:/Users/gino/putty-0.70.tar':
     source        => 'C:/Users/gino/putty-0.70.tar',
     extract       => true,
