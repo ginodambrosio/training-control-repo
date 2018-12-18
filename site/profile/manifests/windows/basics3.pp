@@ -103,14 +103,20 @@ class profile::windows::basics3 {
     path   => 'c:\\inetpub\\minimal',
   }
 
-  archive { 'C:/Windows/Temp/7z1805-x64.msi':
-    source => 'https://www.7-zip.org/a/7z1805-x64.msi',
-  }
+  #archive { 'C:/Windows/Temp/7z1805-x64.msi':
+    #source => 'https://www.7-zip.org/a/7z1805-x64.msi',
+  #}
 
-  class { 'archive':
-    seven_zip_name     => '7-Zip 18.05 (x64 edition)',
-    seven_zip_source   => 'C:/Windows/Temp/7z1805-x64.msi',
-    seven_zip_provider => 'windows',
+  #class { 'archive':
+    #seven_zip_name     => '7-Zip 18.05 (x64 edition)',
+    #seven_zip_source   => 'C:/Windows/Temp/7z1805-x64.msi',
+    #seven_zip_provider => 'windows',
+  #}
+
+  include chocolatey
+  package { '7-Zip':
+    ensure   => latest,
+    #provider => 'chocolatey',
   }
 
   archive { 'C:/Users/gino/putty-0.70.tar.gz':
@@ -124,12 +130,6 @@ class profile::windows::basics3 {
     extract       => true,
     extract_path  => "C:/Users/gino",
     creates       => "C:/Users/gino/putty-0.70" #directory inside tgz
-  }
-
-  include chocolatey
-  package { '7-Zip':
-    ensure   => latest,
-    provider => 'chocolatey',
   }
 
 }
