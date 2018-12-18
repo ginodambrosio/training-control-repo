@@ -116,6 +116,7 @@ class profile::windows::basics3 {
   archive { 'C:/Users/gino/putty-0.70.tar.gz':
     source        => 'http://mirror.internode.on.net/pub/putty/0.70/putty-0.70.tar.gz',
     extract       => true,
+    extract_command => 'tar xfz %s',
     extract_path  => "C:/Users/gino",
     creates       => "C:/Users/gino/putty" #directory inside tgz
   }
