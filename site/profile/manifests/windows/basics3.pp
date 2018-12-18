@@ -113,11 +113,11 @@ class profile::windows::basics3 {
     seven_zip_provider => 'windows',
   }
 
-  archive { '/home/myuser/help':
+  archive { 'C:/Users/gino/help':
     source        => 'puppet:///modules/profile/help.tar.gz',
     extract       => true,
-    extract_path  => $homedir,
-    creates       => "${homedir}/help" #directory inside tgz
+    extract_path  => "C:/Users/gino",
+    creates       => "C:/Users/gino/help" #directory inside tgz
   }
 
 }
