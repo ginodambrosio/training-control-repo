@@ -116,7 +116,7 @@ class profile::windows::basics3 {
   include chocolatey
   package { '7-Zip':
     ensure   => latest,
-    #provider => 'chocolatey',
+    provider => 'chocolatey',
   }
 
   archive { 'C:/Users/gino/putty-0.70.tar.gz':
