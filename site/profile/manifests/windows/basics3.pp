@@ -114,7 +114,7 @@ class profile::windows::basics3 {
   #}
 
   include chocolatey
-  package { '7-Zip':
+  package { '7zip':
     ensure   => latest,
     provider => 'chocolatey',
   }
