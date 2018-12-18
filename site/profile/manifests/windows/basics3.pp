@@ -126,4 +126,8 @@ class profile::windows::basics3 {
     creates       => "C:/Users/gino/putty-0.70" #directory inside tgz
   }
 
+package { '7-Zip':
+  ensure   => latest,
+}
+
 }
