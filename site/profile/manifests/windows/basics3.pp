@@ -113,11 +113,11 @@ class profile::windows::basics3 {
     seven_zip_provider => 'windows',
   }
 
-  archive { 'C:/Users/gino/help':
-    source        => 'puppet:///modules/profile/help.tar.gz',
+  archive { 'C:/Users/gino/pwsafe':
+    source        => 'https://sourceforge.net/projects/passwordsafe/files/Linux-BETA/1.03/pwsafe-1.03BETA-src.tgz/download',
     extract       => true,
     extract_path  => "C:/Users/gino",
-    creates       => "C:/Users/gino/help" #directory inside tgz
+    creates       => "C:/Users/gino/pwsafe" #directory inside tgz
   }
 
 }
