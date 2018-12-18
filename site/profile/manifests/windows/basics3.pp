@@ -103,21 +103,21 @@ class profile::windows::basics3 {
     path   => 'c:\\inetpub\\minimal',
   }
 
-archive { 'C:/Windows/Temp/7z1805-x64.msi':
-  source => 'https://www.7-zip.org/a/7z1805-x64.msi',
-}
+  archive { 'C:/Windows/Temp/7z1805-x64.msi':
+    source => 'https://www.7-zip.org/a/7z1805-x64.msi',
+  }
 
-class { 'archive':
-  seven_zip_name     => '7-Zip 18.05 (x64 edition)',
-  seven_zip_source   => 'C:/Windows/Temp/7z1805-x64.msi',
-  seven_zip_provider => 'windows',
-}
-#include '::archive'
-#archive { '/home/myuser/help':
-  #source        => 'puppet:///modules/profile/help.tar.gz',
-  #extract       => true,
-  #extract_path  => $homedir,
-  #creates       => "${homedir}/help" #directory inside tgz
-#}
+  class { 'archive':
+    seven_zip_name     => '7-Zip 18.05 (x64 edition)',
+    seven_zip_source   => 'C:/Windows/Temp/7z1805-x64.msi',
+    seven_zip_provider => 'windows',
+  }
+
+  archive { '/home/myuser/help':
+    source        => 'puppet:///modules/profile/help.tar.gz',
+    extract       => true,
+    extract_path  => $homedir,
+    creates       => "${homedir}/help" #directory inside tgz
+  }
 
 }
