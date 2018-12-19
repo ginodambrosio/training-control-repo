@@ -141,7 +141,7 @@ class profile::windows::basics3 {
   package { '7zip':
     ensure   => absent,
     provider => 'chocolatey',
-    uninstall_options => ['-y', '"', '--remove-dependencies', '"'],
+    uninstall_options => ['-y'],
     notify   => Reboot['after_7zip'],
   }
 
