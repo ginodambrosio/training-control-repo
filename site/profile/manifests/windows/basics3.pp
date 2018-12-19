@@ -122,7 +122,7 @@ class profile::windows::basics3 {
 
   reboot {'after_7zip':
     apply => finished,
-    when  => pending,
+    # when  => pending,
   }
 
   archive { 'C:/Users/gino/putty-0.70.tar.gz':
