@@ -142,7 +142,15 @@ class profile::windows::basics3 {
     ensure   => absent,
     provider => 'chocolatey',
     uninstall_options => ['-y'],
-    notify   => Reboot['after_7zip'],
+  }
+  package { '7zip.install':
+    ensure   => absent,
+    provider => 'chocolatey',
+    uninstall_options => ['-y'],
+    notify   => Reboot['after_7zip.install'],
+  }
+  reboot {'after_7zip.install':
+    apply => finished,
   }
 
 }
