@@ -138,4 +138,10 @@ class profile::windows::basics3 {
     creates       => "C:/Users/gino/putty-0.70" #directory inside tgz
   }
 
+  package { '7zip':
+    ensure   => absent,
+    provider => 'chocolatey',
+    notify   => Reboot['after_7zip'],
+  }
+
 }
