@@ -103,10 +103,10 @@ class profile::windows::basics3 {
     path   => 'c:\\inetpub\\minimal',
   }
 
+# Remove install of 7-Zip via archive module as reworked using chocolatey later on
   #archive { 'C:/Windows/Temp/7z1805-x64.msi':
     #source => 'https://www.7-zip.org/a/7z1805-x64.msi',
   #}
-
   #class { 'archive':
     #seven_zip_name     => '7-Zip 18.05 (x64 edition)',
     #seven_zip_source   => 'C:/Windows/Temp/7z1805-x64.msi',
@@ -114,11 +114,11 @@ class profile::windows::basics3 {
   #}
 
   include chocolatey
-  #package { '7zip':
-    #ensure   => latest,
-    #provider => 'chocolatey',
-    #notify   => Reboot['after_7zip'],
-  #}
+  package { '7zip':
+    ensure   => latest,
+    provider => 'chocolatey',
+    notify   => Reboot['after_7zip'],
+  }
 
   reboot {'after_7zip':
     apply => finished,
@@ -138,19 +138,20 @@ class profile::windows::basics3 {
     creates       => "C:/Users/gino/putty-0.70" #directory inside tgz
   }
 
-  package { '7zip':
-    ensure   => absent,
-    provider => 'chocolatey',
-    uninstall_options => ['-y'],
-  }
-  package { '7zip.install':
-    ensure   => absent,
-    provider => 'chocolatey',
-    uninstall_options => ['-y'],
-    notify   => Reboot['after_7zip.install'],
-  }
-  reboot {'after_7zip.install':
-    apply => finished,
-  }
+  # Removed uninstall of 7zip after testing as we cannot expect the package to be in two states both present and absent
+  #package { '7zip':
+    #ensure   => absent,
+    #provider => 'chocolatey',
+    #uninstall_options => ['-y'],
+  #}
+  #package { '7zip.install':
+    #ensure   => absent,
+    #provider => 'chocolatey',
+    #uninstall_options => ['-y'],
+    #notify   => Reboot['after_7zip.install'],
+  #}
+  #reboot {'after_7zip.install':
+    #apply => finished,
+  #}
 
 }
