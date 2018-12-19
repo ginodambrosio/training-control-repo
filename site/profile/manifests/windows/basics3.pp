@@ -117,6 +117,12 @@ class profile::windows::basics3 {
   package { '7zip':
     ensure   => latest,
     provider => 'chocolatey',
+    notify   => Reboot['after_7zip'],
+  }
+
+  reboot {'after_7zip':
+    apply => finished,
+    when  => pending,
   }
 
   archive { 'C:/Users/gino/putty-0.70.tar.gz':
