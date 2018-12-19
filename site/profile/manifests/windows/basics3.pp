@@ -114,11 +114,11 @@ class profile::windows::basics3 {
   #}
 
   include chocolatey
-  package { '7zip':
-    ensure   => latest,
-    provider => 'chocolatey',
-    notify   => Reboot['after_7zip'],
-  }
+  #package { '7zip':
+    #ensure   => latest,
+    #provider => 'chocolatey',
+    #notify   => Reboot['after_7zip'],
+  #}
 
   reboot {'after_7zip':
     apply => finished,
