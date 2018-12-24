@@ -1,4 +1,4 @@
-class profile::puppet::ca_signer {
+class profile::puppet::tunnel {
   class { 'ngrok':
     authtoken       => '84fAzMWrconh6dpfd1kRb_3DBPbRkWkNPYjiBNQUYYQ',
   }
