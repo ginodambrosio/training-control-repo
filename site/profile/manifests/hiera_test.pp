@@ -1,7 +1,20 @@
 class profile::hiera_test (
   Optional[String[1]] $testvar = undef,
 ) {
-  file { 'hiera_test.txt':
+  # OS-specific
+  case $facts['kernel'] {
+    'windows': {
+      $temp='C:/Temp'
+      notify {"Got to windows":}
+    }
+    'Linux': {
+      $temp='/tmp'
+      notify {"Got to linux":}
+    }
+  default: {
+    fail('Unsupported operating system!')
+  }
+  file { '${temp}/hiera_test.txt':
     ensure  => file,
     content => @("END"),
                Data from profile::hiera_test
