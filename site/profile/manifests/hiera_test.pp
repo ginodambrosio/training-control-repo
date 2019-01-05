@@ -1,7 +1,7 @@
 class profile::hiera_test (
   Optional[String[1]] $testvar = undef,
 ) {
-  file { 'c:/tmp/hiera_test.txt':
+  file { 'hiera_test.txt':
     ensure  => file,
     content => @("END"),
                Data from profile::hiera_test
