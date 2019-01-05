@@ -1,5 +1,4 @@
 class profile::hiera_test (
-  Optional[String[1]] $myvar = undef,
   Optional[String[1]] $testvar = undef,
 ) {
   file { '/tmp/hiera_test.txt':
