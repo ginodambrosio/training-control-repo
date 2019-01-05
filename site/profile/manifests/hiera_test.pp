@@ -14,7 +14,7 @@ class profile::hiera_test (
   default: {
     fail('Unsupported operating system!')
   }
-  file { '${temp}/hiera_test.txt':
+  file { '$temp/hiera_test.txt':
     ensure  => file,
     content => @("END"),
                Data from profile::hiera_test
