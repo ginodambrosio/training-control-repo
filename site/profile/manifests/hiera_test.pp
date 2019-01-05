@@ -5,11 +5,11 @@ class profile::hiera_test (
   case $facts['kernel'] {
     'windows': {
       $tempfile = 'C:\\Temp\\hiera_test.txt'
-      notify {"Windows ${tempfile}":}
+      # notify {"Windows ${tempfile}":}
     }
     'Linux': {
       $tempfile = '/tmp/hiera_test.txt'
-      notify {"Linux ${tempfile}":}
+      # notify {"Linux ${tempfile}":}
     }
   default: {
     fail('Unsupported operating system!')
