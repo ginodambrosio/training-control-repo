@@ -1,2 +1,2 @@
 ---
-profile::hiera_test::testvar: 'node-0-prod'
+profile::hiera_test::testvar: 'node-0-stage'
