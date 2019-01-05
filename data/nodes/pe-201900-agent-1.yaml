@@ -1,0 +1,2 @@
+---
+profile::hiera_test::testvar: 'node-1-prod'
