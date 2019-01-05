@@ -4,18 +4,21 @@ class profile::hiera_test (
   # OS-specific
   case $facts['kernel'] {
     'windows': {
-      $tempfile = 'C:/Temp/hiera_test.txt'
-      notify {"Got to windows ${temp}":}
+      $tempdir = 'C:/Temp/'
+      $tempfile = 'hiera_test.txt'
+      notify {"Windows ${tempdir}${tempfile}":}
     }
     'Linux': {
-      $tempfile = '/tmp/hiera_test.txt'
-      notify {"Got to linux ${temp}":}
+      $tempdir = '/tmp/'
+      $tempfile = 'hiera_test.txt'
+      notify {"Linux ${tempdir}${tempfile}":}
     }
   default: {
     fail('Unsupported operating system!')
     }
   }
   file { $tempfile:
+    path    => $tempdir,
     ensure  => file,
     content => @("END"),
                Data from profile::hiera_test
