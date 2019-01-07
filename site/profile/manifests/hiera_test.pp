@@ -29,5 +29,5 @@ class profile::hiera_test (
 #    owner   => root,
 #    mode    => '0644',
   }
-  notify{"myvar: ${myvar} | testvar: ${testvar} | environment: $::environment" | secretmsg: ${secretmsg}: }
+  notify{"myvar: ${myvar} | testvar: ${testvar} | environment: $::environment | secretmsg: ${secretmsg}": }
 }
