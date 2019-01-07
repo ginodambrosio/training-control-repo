@@ -1,0 +1,11 @@
+---
+profile::hiera_test::secretmsg: >
+    ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEBBQAEggEAHvXhgSe6utMvfrJCiusRw/W/uvVEypoMz3KN
+    giVkheHOzn6xrdMRMm167TrDYImUVqKUNRq5Gk+OeD38+DzjevKNUqr04LiG
+    /wDtBtvbVUKtZu6la8fcYr83yPIT0/Azkf2cUV55rWdEn9NA8sfw6l3kM7nw
+    oSOcSNMFNIPmWY6vylSHQCr8m8tyBz97PaOqDt+zgYzkBsPZGdqBwZad+HgE
+    M4r5mVAaASdWs3w1rvBseXRceSCFiXfruJrT1gV2iBpvJXrazeh1AS95rgrN
+    IcjgdaGsAfY3tlZ368VHgoUstNvNe5jv6vuQjfaXT478mbgJjy9HJnGs7eUh
+    qK5h5jBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCK5YIc/NR67rwAuXr9
+    qcGfgCCWddH+iILmtUxugnnqZ9E+5Lm8AhlsH6vbRRlaB+aYZQ==]
